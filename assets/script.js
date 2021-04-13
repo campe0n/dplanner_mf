@@ -1,5 +1,8 @@
 var currentDay = $("#currentDay");
-var timeBlock = $(".time-block");
+var btn = $(".saveBtn");
+
+$("#currentDay").text(dayjs().format("MMM Do, YYYY"));
+var currentHour = dayjs().hour();
 
 var schedule = {
     9: "",
@@ -11,6 +14,13 @@ var schedule = {
     3: "",
     4: "",
     5: "",
-}
+};
 
-$("#currentDay").text(dayjs().format("MMM Do, YYYY"));
+
+btn.on('click', function(event) {
+    event.preventDefault();
+
+    var inputText = $("#1").val();
+    localStorage.setItem("event", inputText);
+    alert(inputText);
+});
