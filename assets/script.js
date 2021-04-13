@@ -1,4 +1,5 @@
 var currentDay = $("#currentDay");
+var timeBlock = $(".time-block");
 
 var schedule = {
     9: "",
