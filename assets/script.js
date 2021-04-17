@@ -1,47 +1,30 @@
 var currentDay = $("#currentDay");
 var container = $(".container");
-var btn = $(".saveBtn");
-var input1 = $("#1");
-var input2 = $("#2");
-var input3 = $("#3");
-var input4 = $("#4");
-var input5 = $("#5");
-var input6 = $("#6");
-var input7 = $("#7");
-var input8 = $("#8");
-var input9 = $("#9");
 var curentHour = dayjs().hour();
 $('#currentDay').text(dayjs().format('MMMM Do, YYYY'));
-
-container.on('click', '.saveBtn', function(event) {
-    
+renderLastEvent();
+function saveEvent(event) {
+    event.preventDefault();
     var schedule = {
-        i1: input1.val(),
-        i2: input2.val(),
-        i3: input3.val(),
-        i4: input4.val(),
-        i5: input5.val(),
-        i6: input6.val(),
-        i7: input7.val(),
-        i8: input8.val(),
-        i9: input9.val(),
+        nineam: $("#1").val(),
+        tenam: $("#2").val(),
+        elevenam: $("#3").val(),
+        twelveam: $("#4").val(),
+        onepm: $("#5").val(),
+        twopm: $("#6").val(),
+        threepm: $("#7").val(),
+        fourpm: $("#8").val(),
+        fivepm: $("#9").val(),
     };
-
     localStorage.setItem("event", JSON.stringify(schedule));
     renderLastEvent();
-});
+};
 
 function renderLastEvent() {
     var lastEvent = JSON.parse(localStorage.getItem("event"));
     if (lastEvent !== null) {
-        $("#1").text(lastEvent.i1);
-        console.log(lastEvent.i1);
-        }
+        $("#1").text(lastEvent.nineam);
     }
-
-function colorCode() {
-    var input1 = 9;
-    if (input1 === currentHour) {input1.attr('class', 'present')}
-    else if (input1 > currentHOur) {input1.attr('class', 'future')}
-    else {input1.attr('class', 'past')}
+    console.log(lastEvent.nineam)
 }
+
