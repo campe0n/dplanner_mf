@@ -1,6 +1,7 @@
 var currentDay = $("#currentDay");
+var container = $(".container");
 var btn = $(".saveBtn");
-var timeBlocks = $(".time-block")
+var timeBlocks = $("input");
 var input1 = $("#1");
 var input2 = $("#2");
 var input3 = $("#3");
@@ -10,12 +11,11 @@ var input6 = $("#6");
 var input7 = $("#7");
 var input8 = $("#8");
 var input9 = $("#9");
-
+var curentHour = dayjs().hour();
 $('#currentDay').text(dayjs().format('MMMM Do, YYYY'));
 
-btn.on('click', function(event) {
-    event.preventDefault();
-
+container.on('click', '.saveBtn', function(event) {
+    
     var schedule = {
         i1: input1.val(),
         i2: input2.val(),
@@ -32,8 +32,9 @@ btn.on('click', function(event) {
     renderLastEvent();
 });
 
-function renderLastEvent() {
+function renderLastEvent(event) {
     var lastEvent = JSON.parse(localStorage.getItem("event"));
     if (lastEvent !== null) 
-        $(".time-block").text(input1.val());
+        timeBlocks.text(lastEvent.i1);
     }
+console.log(dayjs().hour());
