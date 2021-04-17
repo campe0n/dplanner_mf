@@ -1,7 +1,6 @@
 var currentDay = $("#currentDay");
 var container = $(".container");
 var btn = $(".saveBtn");
-var timeBlocks = $("input");
 var input1 = $("#1");
 var input2 = $("#2");
 var input3 = $("#3");
@@ -32,9 +31,17 @@ container.on('click', '.saveBtn', function(event) {
     renderLastEvent();
 });
 
-function renderLastEvent(event) {
+function renderLastEvent() {
     var lastEvent = JSON.parse(localStorage.getItem("event"));
-    if (lastEvent !== null) 
-        timeBlocks.text(lastEvent.i1);
+    if (lastEvent !== null) {
+        $("#1").text(lastEvent.i1);
+        console.log(lastEvent.i1);
+        }
     }
-console.log(dayjs().hour());
+
+function colorCode() {
+    var input1 = 9;
+    if (input1 === currentHour) {input1.attr('class', 'present')}
+    else if (input1 > currentHOur) {input1.attr('class', 'future')}
+    else {input1.attr('class', 'past')}
+}
