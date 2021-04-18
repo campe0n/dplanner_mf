@@ -24,23 +24,20 @@ function renderLastEvent() {
     var fourInput = localStorage.getItem("16");
     var fiveInput = localStorage.getItem("17");
     
-    document.getElementById("9").value = nineInput;
-    document.getElementById("10").value = tenInput;
-    document.getElementById("11").value = elevenInput;
-    document.getElementById("12").value = twelveInput;
-    document.getElementById("13").value = oneInput;
-    document.getElementById("14").value = twoInput;
-    document.getElementById("15").value = threeInput;
-    document.getElementById("16").value = fourInput;
-    document.getElementById("17").value = fiveInput;
+    $('#9').val(nineInput);
+    $('#10').val(tenInput);
+    $('#11').val(elevenInput);
+    $('#12').val(twelveInput);
+    $('#13').val(oneInput);
+    $('#14').val(twoInput);
+    $('#15').val(threeInput);
+    $('#16').val(fourInput);
+    $('#17').val(fiveInput);
 }
 
 function colorCode(){
     console.log(currentHour);
-    $('input').each(function(){
-        var number = 1 + number;
-        if (number === currentHour) $('input').attr('present');
-    })
+    
 }
 //call functions(init)
 renderLastEvent();
