@@ -35,10 +35,5 @@ function renderLastEvent() {
     $('#17').val(fiveInput);
 }
 
-function colorCode(){
-    console.log(currentHour);
-    
-}
 //call functions(init)
 renderLastEvent();
-colorCode();
