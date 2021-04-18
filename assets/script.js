@@ -1,6 +1,6 @@
 // time variables
 var currentDay = $("#currentDay");
-var curentHour = dayjs().hour();
+var currentHour = dayjs().hour();
 $('#currentDay').text(dayjs().format('MMMM Do, YYYY'));
 
 //Save
@@ -23,17 +23,25 @@ function renderLastEvent() {
     var threeInput = localStorage.getItem("15");
     var fourInput = localStorage.getItem("16");
     var fiveInput = localStorage.getItem("17");
-
-    $("#9").text(nineInput);
-    $("#10").text(tenInput);
-    $("#11").text(elevenInput);
-    $("#12").text(twelveInput);
-    $("#1").text(oneInput);
-    $("#2").text(twoInput);
-    $("#3").text(threeInput);
-    $("#4").text(fourInput);
-    $("#5").text(fiveInput);
-
+    
+    document.getElementById("9").value = nineInput;
+    document.getElementById("10").value = tenInput;
+    document.getElementById("11").value = elevenInput;
+    document.getElementById("12").value = twelveInput;
+    document.getElementById("13").value = oneInput;
+    document.getElementById("14").value = twoInput;
+    document.getElementById("15").value = threeInput;
+    document.getElementById("16").value = fourInput;
+    document.getElementById("17").value = fiveInput;
 }
-//call renderlastEvent (init)
+
+function colorCode(){
+    console.log(currentHour);
+    $('input').each(function(){
+        var number = 1 + number;
+        if (number === currentHour) $('input').attr('present');
+    })
+}
+//call functions(init)
 renderLastEvent();
+colorCode();

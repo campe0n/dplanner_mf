@@ -4,7 +4,7 @@
 Daily planner is a web page designed to keep track of events throughout your day.
 
 # Screenshot
-![screenshot]
+![screenshot](https://github.com/campe0n/dplanner_mf/blob/main/assets/images/dplannerScreenshot.PNG)
 
 # Links
 1. Github: (https://github.com/campe0n/dplanner_mf)
